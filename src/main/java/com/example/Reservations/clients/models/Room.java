@@ -14,7 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Room implements Serializable { 
+public class Room implements Serializable {
+    private String id;
     private String num_room;
     private RoomType room_type;
     private String price_per_night;

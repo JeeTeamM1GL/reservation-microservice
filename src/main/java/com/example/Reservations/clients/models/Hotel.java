@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class Hotel implements Serializable {
-    private Long id;
+    private String id;
     private String name;
     private Location location;
     private int rooms_count;

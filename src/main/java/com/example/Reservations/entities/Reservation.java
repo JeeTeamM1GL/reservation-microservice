@@ -1,4 +1,6 @@
 package com.example.Reservations.entities;
+import com.example.Reservations.clients.models.Hotel;
+import com.example.Reservations.clients.models.Room;
 import com.example.Reservations.clients.models.User;
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,7 +18,6 @@ import java.time.Instant;
 @Table(name="reservations")
 public class Reservation implements Serializable {
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name = "date_arrivee", nullable = false)
@@ -48,11 +49,17 @@ public class Reservation implements Serializable {
     @Column(name = "customer")
     private User customer;
 
+    @Column(name = "hotelId")
+    private String hotelId;
+
+    @Column(name = "hotel")
+    private Hotel hotel;
+
     @Column(name = "roomId")
     private String roomId;
 
     @Column(name = "room")
-    private User room;
+    private Room room;
 
 
 }

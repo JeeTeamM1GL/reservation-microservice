@@ -35,6 +35,16 @@ public class ReservationController {
         return ResponseEntity.ok(reservationService.findAllReservations());
     }
 
+    @GetMapping("/hotel/{hotelId}")
+    public ResponseEntity<List<Reservation>> getReservationsByHotelId(@PathVariable String hotelId) {
+        return ResponseEntity.ok(reservationService.findReservationsByHotelId(hotelId));
+    }
+
+    @GetMapping("/customer/{customerId}")
+    public ResponseEntity<List<Reservation>> getReservationsByUserId(@PathVariable String customerId) {
+        return ResponseEntity.ok(reservationService.findReservationsByCustomerId(customerId));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Reservation>> findReservationById(@PathVariable String id) {
         return ResponseEntity.ok(reservationService.findReservationById(id));

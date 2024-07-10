@@ -31,6 +31,8 @@ public class ReservationDto {
 
     private String customerId;
 
+    private String hotelId;
+
     private String roomId;
 
 

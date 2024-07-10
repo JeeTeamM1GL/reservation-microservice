@@ -9,6 +9,8 @@ import java.util.Optional;
 public interface IReservationService  {
     Reservation createReservation(ReservationDto reservationDto);
     List<Reservation> findAllReservations();
+    List<Reservation> findReservationsByCustomerId(String id);
+    List<Reservation> findReservationsByHotelId(String id);
     Optional<Reservation> findReservationById(String id);
     void deleteReservation(String id);
 }
