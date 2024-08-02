@@ -13,19 +13,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/reservations")
 @AllArgsConstructor
+@CrossOrigin("*")
 public class ReservationController {
 
     @Autowired
     private final IReservationService reservationService;
 
-
-
-
-    /*public ReservationController(IReservationService reservationService) {
-        this.reservationService = reservationService;
-    }*/
-
-    @PostMapping
+    @PostMapping("/public")
     public ResponseEntity<Reservation> createReservation(@RequestBody ReservationDto reservationDto) {
         return ResponseEntity.ok(reservationService.createReservation(reservationDto));
     }
